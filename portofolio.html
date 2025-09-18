@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false">
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-every">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-bg-video">
+            <source src="img\BG.mp4" type="video/mp4">
+        </video>
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+        <div class="floating-shape shape4"></div>        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="West">Hey, I'm <span class="name">Key</span></h1>
+                <h1><span class="asas">Multi-Instrumentalist, Producer, Day Dreamer.</span></h1>
+                <p>Muhammad Padhillah, 20 years old Multi-Instrumentalist, Producer and Day Dreamer, currently studying in UPI-YPTK University in Padang, Indonesia. Born in 2005, July, 3 In Jujun, Kerinci, Indonesia.</p>
+
+                <div class="sosmed">
+                    <a href="https://www.instagram.com/key.wvy/"><i class="instagram"><img src="img\instagram.png" alt="Logo" class="instagram"></i></a>
+                    <a href="https://www.tiktok.com/@kxyezz"><i class="tiktok"><img src="img\tiktok.png" alt="Logo" class="tiktok"></i></a>
+                </div>
+
+                <a href="#about" class="about-btn">About</a>
+            </div>
+            
+            <div class="hero-image">
+                <div class="profile-circle">
+                    <img src="img\anjay.png" alt="Foto Profil" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content animate-on-scroll">
+                <h2>About <span class="highlight">Me</span></h2>
+                <p>Multi-instrumentalist Music Composer with two years of experience in the music world, specializing in genres ranging from Electronic to Rock and beyond. I was born on July 3, 2005, in Kerinci, Jujun, and I am currently pursuing my studies at UPI-YPTK University with Technology Information Major Bachelor degree in Padang, Indonesia</p>
+                <p><span class="Bold"> strongly believe that music has the power to transform lives and provide meaningful support for people as they navigate their personal journeys.</span></p>
+            </div>
+            <div class="about-image animate-on-scroll">
+                <div class="profile-circle2">
+                    <img src="img\anjay2.png" alt="Foto Profil" class="profile-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="floating-shape shape5"></div>
+        <div class="floating-shape shape6"></div>
+        <div class="floating-shape shape7"></div>
+        <div class="floating-shape shape8"></div> 
+        <div class="skills-container">
+            <h2 class="animate-on-scroll">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card animate-on-scroll">
+                    <div>
+                        <img src="img\piano.png" class="multimedia">
+                    </div>
+                    <br>
+                    <h3>Multi-Instrumentalist</h3>
+                    <p>Proficient in playing multiple instruments, including keyboard, guitar, and bass.</p>
+                </div>
+                <div class="skill-card animate-on-scroll">
+                    <div>
+                        <img src="img\music-note.png" class="multimedia">
+                    </div>
+                    <br>
+                    <h3>Composing</h3>
+                    <p>Experienced in composing, arranging, and producing tracks across genres (Electronic, Rock, Hip-Hop etc.).</p>
+                </div>
+                <div class="skill-card animate-on-scroll">
+                    <div>
+                        <img src="img\wave-sound.png" class="multimedia">
+                    </div>
+                    <br>
+                    <h3>Digital Audio Workstations</h3>
+                    <p>Digital Audio Workstations (DAWs) — Proficient in Ableton Live Studio.</p>
+                </div>
+            </div>
+        </div>    
+
+        <div class="skills-container1">
+            <h2 class="animate-on-scroll"></h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card animate-on-scroll">
+                    <div>
+                        <img src="img\wrench-and-screwdriver-crossed.png" alt="PS" class="multimedia">
+                    </div>
+                    <h3>Other Skills</h3>
+                    <div class="Multi">
+                    <img src="img\photoshop.png" class="multimedia">
+                    <img src="img\excel.png" class="multimedia">
+                    <img src="img\computer.png" class="multimedia">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            animateElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<br>
+    <footer class="footer">
+		<div class="container">
+			<p>&copy; 2025 Key. All rights reserved.
+		</div>
+	</footer>
+</body>
+</html>
